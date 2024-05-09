@@ -4,6 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			personajes: [],
 			planetas: [],
+			naves: [],
 
 		},
 		actions: {
@@ -26,7 +27,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error)
 				}
-			}
+			},
+
+			obtenerNaves: async () => {
+				try {
+					const response = await fetch("https://swapi.dev/api/starships")
+					const data = await response.json()
+					setStore({ naves: data.results })
+				} catch (error) {
+					console.log(error)
+				}
+			},
 
 		}
 	};
