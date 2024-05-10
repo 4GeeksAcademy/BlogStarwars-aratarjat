@@ -30,14 +30,90 @@ const Details = () => {
 
     return (
         <div className='container'>
-            <div className='row'>
-                <div className='col'>
-                    <img src={`https://starwars-visualguide.com/assets/img/${params.type == "people" ? "characters" : params.type}/${params.uid}.jpg`} className="card-img-top" alt={currentDetail?.name} />
+
+            {currentDetail.skin_color &&
+
+                <div className='row'>
+                    <div className='col '>
+                        <img src={`https://starwars-visualguide.com/assets/img/${params.type == "people" ? "characters" : params.type}/${params.uid}.jpg`} className="card-img-top rounded float-start" alt={currentDetail?.name} />
+                    </div>
+                    <div className='col text-warning'>
+                        Name: {currentDetail?.name}
+                    </div>
+                    <div className='col'>
+                        birth Year: {currentDetail?.birth_year}
+                    </div>
+                    <div className='col text-warning'>
+                        Gender: {currentDetail?.gender}
+                    </div>
+                    <div className='col'>
+                        Skin Color: {currentDetail?.skin_color}
+                    </div>
+                    <div className='col text-warning'>
+                        Eye color: {currentDetail?.eye_color}
+                    </div>
+                    <div className='col'>
+                        homeworld: {currentDetail?.homeworld}
+                    </div>
                 </div>
-                <div className='col'>
-                    Name: {currentDetail?.name}
+
+            }
+
+            {currentDetail.terrain &&
+
+                <div className='row'>
+                    <div className='col '>
+                        <img src={`https://starwars-visualguide.com/assets/img/${params.type == "people" ? "characters" : params.type}/${params.uid}.jpg`} className="card-img-top rounded float-start" alt={currentDetail?.name} />
+                    </div>
+                    <div className='col text-warning'>
+                        Name: {currentDetail?.name}
+                    </div>
+                    <div className='col'>
+                        terrain: {currentDetail?.terrain}
+                    </div>
+                    <div className='col text-warning'>
+                        gravity: {currentDetail?.gravity}
+                    </div>
+                    <div className='col'>
+                        orbital_period: {currentDetail?.orbital_period}
+                    </div>
+                    <div className='col text-warning'>
+                        diameter: {currentDetail?.diameter}
+                    </div>
+                    <div className='col'>
+                        population: {currentDetail?.population}
+                    </div>
                 </div>
-            </div>
+
+            }
+
+            {currentDetail.model &&
+
+                <div className='row'>
+                    <div className='col '>
+                        <img src={`https://starwars-visualguide.com/assets/img/${params.type == "people" ? "characters" : params.type}/${params.uid}.jpg`} className="card-img-top rounded float-start" alt={currentDetail?.name} />
+                    </div>
+                    <div className='col text-warning'>
+                        Name: {currentDetail?.name}
+                    </div>
+                    <div className='col'>
+                        manufacturer: {currentDetail?.manufacturer}
+                    </div>
+                    <div className='col text-warning'>
+                        cost_in_credits: {currentDetail?.cost_in_credits}
+                    </div>
+                    <div className='col'>
+                        length: {currentDetail?.length}
+                    </div>
+                    <div className='col text-warning'>
+                        cargo_capacity: {currentDetail?.cargo_capacity}
+                    </div>
+                    <div className='col'>
+                        vehicle_class: {currentDetail?.vehicle_class}
+                    </div>
+                </div>
+
+            }
 
         </div>
 
