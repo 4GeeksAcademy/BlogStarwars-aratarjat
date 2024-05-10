@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			personajes: [],
 			planetas: [],
 			naves: [],
+			favorites: []
 
 		},
 		actions: {
@@ -37,6 +38,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log(error)
 				}
+			},
+
+			addToFavorites: (name) => {
+				const store = getStore();
+				let newFavorites = store.favorites;
+				if (!newFavorites.includes(name)) {
+					newFavorites.push(name);
+				}
+				setStore({ favorites: newFavorites, ...store })
+			},
+
+			deleteFavorites: (name) => {
+				console.log(name)
+				const store = getStore();
+				let newFavorites = store.favorites;
+				const actualizado = newFavorites.filter((item) => item !== name)
+				setStore({ favorites: actualizado })
 			},
 
 		}

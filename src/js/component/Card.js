@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router'
+import { Context } from "../store/appContext";
 
 const Card = ({ item, id }) => {
+    const { store, actions } = useContext(Context)
     const navigate = useNavigate()
     console.log(id)
     return (
@@ -12,11 +14,14 @@ const Card = ({ item, id }) => {
                 <p className="card-text"> Genero: {item.gender}</p>
 
                 <button onClick={() => navigate(`/details/people/${item.url.split("/")[5]}`)} className="btn btn-primary">Go somewhere</button>
-                <button className='btn btn-outline-dark float-end' >
+                <button className='btn btn-outline-dark float-end'
+                    onClick={(e) => { actions.addToFavorites(item.name) }}
+                >
+
                     <i className="fa fa-heart"></i>
                 </button>
             </div>
-        </div>
+        </div >
 
     )
 }
