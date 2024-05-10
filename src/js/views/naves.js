@@ -6,10 +6,6 @@ import NavesDetalle from "../component/navesdetalle"
 
 const Naves = () => {
     const { actions, store } = useContext(Context)
-
-    useEffect(() => {
-        actions.obtenerNaves()
-    }, [])
     console.log(store.naves)
 
     return (

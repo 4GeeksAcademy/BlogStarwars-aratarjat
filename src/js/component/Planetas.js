@@ -1,7 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
 
 const CardPlanets = ({ item, id }) => {
-
+    const navigate = useNavigate()
     return (
         <div className="card" style={{ width: "18rem", flex: "none", margin: "10px" }}>
             {id == 1 ?
@@ -14,7 +15,7 @@ const CardPlanets = ({ item, id }) => {
             <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
                 <p className="card-text"> Habitantes: {item.population}</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <button onClick={() => navigate(`/details/planets/${item.url.split("/")[5]}`)} className="btn btn-primary">Go somewhere</button>
                 <button className='btn btn-outline-dark float-end' >
                     <i className="fa fa-heart"></i>
                 </button>

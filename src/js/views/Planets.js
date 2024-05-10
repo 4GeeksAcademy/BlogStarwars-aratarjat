@@ -7,11 +7,6 @@ import CardPlanets from "../component/Planetas"
 const Planetas = () => {
     const { actions, store } = useContext(Context)
 
-    useEffect(() => {
-        actions.obtenerPlanetas()
-    }, [])
-
-
     return (
         <div>
             <h1 className="text-danger" style={{ marginTop: "10px" }} > Planets </h1>

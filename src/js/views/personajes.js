@@ -7,11 +7,6 @@ import Card from "../component/Card"
 const Personajes = () => {
     const { actions, store } = useContext(Context)
 
-    useEffect(() => {
-        actions.obtenerPersonajes()
-    }, [])
-
-
     return (
         <div>
             <h1 className="text-danger" style={{ marginTop: "10px" }} > Characters </h1>
