@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../component/Card";
 import "../../styles/home.css";
-import Naves from "./Naves";
+import Naves from "./naves";
 import Personajes from "./personajes";
 import Planetas from "./Planets";
 
